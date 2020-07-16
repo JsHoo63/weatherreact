@@ -131,7 +131,7 @@ class App extends Component {
                     onChange={this.onChange}
                   />
                 </FormGroup>
-                <Button color="primary">Submit</Button>
+                <input class="submitlocation" type="submit" value="Submit"/>
                 <p />
               </Form>
             </Col>
@@ -154,9 +154,9 @@ class App extends Component {
                     <tr>
                       <td>
                         <button
+                         class="tablebutton"
                           onClick={() => {
                             this.removeWeather(weather.location);
-                            
                           }}
                         >
                           Delete

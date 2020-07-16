@@ -15,9 +15,15 @@ app.get('/getweather', (req, res) => {
   axios
     .get(querystr)
     .then(response => {
+
+      const query1 = 'http://api.timezonedb.com/v2.1/list-time-zone?key=S9Y656KM9ISS&format=json&country='+ response.data.sys.country +'';
+
+      axios
+      .get(query1)
+      .then(response1 => {
       const weather = new Weather({
         location: location,
-        country: response.data.sys.country,
+        country: response1.data.zones[0].countryName,
         mainweather: response.data.weather[0].main,
         decription: response.data.weather.description,
         temp: response.data.main.temp,
@@ -36,6 +42,10 @@ app.get('/getweather', (req, res) => {
         .catch(error => {
           res.status(400).json(error);
         });
+      })
+      .catch(error => {
+        res.status(400).json(error);
+      });
     })
     .catch(error => {
       res.status(400).json(error);
