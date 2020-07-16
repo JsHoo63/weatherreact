@@ -102,9 +102,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Jumbotron>
-          <h1 className="display-3">Weather</h1>
-          <p className="lead">Search for weathers</p>
+        <Jumbotron className="heading">
+          <h4 className="display-3"><b>EVERY WEATHER</b></h4>
+          <h2><p className="lead"><b>Search for weathers</b></p></h2>
         </Jumbotron>
         <Container>
           <Row>

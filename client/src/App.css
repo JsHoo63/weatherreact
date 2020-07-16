@@ -1,7 +1,12 @@
 .App {
   text-align: center;
+  
 }
-
+.heading{
+  background-image: url('weather.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
@@ -16,6 +21,16 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: black;
+ 
+}
+
+.display-3 {
+  font-family: "Lobster", serif;
+  color: #fff;
+}
+
+.lead{
+  color: #fff;
 }
 
 .App-link {
@@ -23,13 +38,12 @@
 }
 
 .tablebutton {
-  background-color: #9b9797a9;
   color : black;
   border-radius: 5px;
 }
 
 .tablebutton:hover{
-  background-color: #e4e3e3a9;
+  background-color: red;
 }
 .submitlocation {
   padding: 5px 20px;
