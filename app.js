@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const axios = require('axios');
-const Movie = require('./Weather');
+const Weather = require('./Weather');
 const port = process.env.PORT||5000;
 var path = require('path');
 
