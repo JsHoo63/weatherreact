@@ -70,7 +70,7 @@ class App extends Component {
         this.getAllWeathers();
       })
       .catch(error => {
-        alert('Error: ', error);
+        alert('Error: Weather not found, please check the location name', error);
       });
     //const data = this.state.movies;
     //this.setState({ movies: this.state.movies.reverse() });
