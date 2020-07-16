@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const axios = require('axios');
 const Movie = require('./Weather');
+const port = process.env.PORT||5000;
+var path = require('path');
 
 const apikey = 'e79e86ac6e231089e7ee3cf9c4d42e03';
 
@@ -63,6 +65,14 @@ app.get('/deleteweather', (req, res) => {
     });
 });
 
-app.listen(5000, () => {
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, 'client/build')));
+  //Handle React routing, return all requests to React app
+  app.get('*', function(req, res) {
+    res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+  });
+}
+
+app.listen(port, () => {
   console.log('server listening on port 5000');
 });
